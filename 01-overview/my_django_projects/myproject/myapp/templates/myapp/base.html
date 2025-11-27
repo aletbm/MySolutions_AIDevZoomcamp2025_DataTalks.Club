@@ -1,0 +1,32 @@
+<!DOCTYPE html>                                                                                                
+<html lang="en">                                                                                               
+<head>                                                                                                         
+    <meta charset="UTF-8">                                                                                     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">                                     
+    <title>{% block title %}My TODO App{% endblock %}</title>                                                  
+    <style>                                                                                                    
+        body { font-family: sans-serif; margin: 20px; }                                                        
+        h1 { color: #333; }                                                                                    
+        nav { margin-bottom: 20px; background-color: #f0f0f0; padding: 10px; }                                 
+        nav a { margin-right: 15px; text-decoration: none; color: #007bff; }                                   
+        nav a:hover { text-decoration: underline; }                                                            
+    </style>                                                                                                   
+</head>                                                                                                        
+<body>                                                                                                         
+    <nav>                                                                                                      
+        <a href="/">Home</a>
+        <a href="add/">Add a new task</a>                                                           
+        <!-- You can add more navigation links here later -->                                                  
+    </nav>                                                                                                     
+                                                                                                                
+    <main>                                                                                                     
+        {% block content %}                                                                                    
+            <!-- Content from child templates will go here -->                                                 
+        {% endblock %}                                                                                         
+    </main>                                                                                                    
+                                                                                                                
+    <footer>                                                                                                   
+        <p>&copy; 2025 My TODO App</p>                                                                         
+    </footer>                                                                                                  
+</body>                                                                                                        
+</html>  

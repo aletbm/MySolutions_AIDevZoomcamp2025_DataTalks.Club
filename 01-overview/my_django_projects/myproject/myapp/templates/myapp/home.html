@@ -1,0 +1,26 @@
+{% extends 'myapp/base.html' %}                                                                                      
+                                                                                                                
+{% block title %}Home - My TODO App{% endblock %}                                                              
+                                                                                                                
+{% block content %}                                                                                            
+    <h1>Welcome to Your TODO App!</h1>                                                                         
+    <p>This is your personalized dashboard. You can manage your tasks here.</p>
+    <h1>My TODOs</h1>                                                                                          
+        <ul>                                                                                                       
+            {% for todo in todos %}                                                                                
+                <li>                                                                                               
+                    {{ todo.task }} -                                                                              
+                    {% if todo.completed %}                                                                        
+                        Completed                                                                                  
+                    {% else %}                                                                                     
+                        <a href="{% url 'mark_complete' todo.id %}">Mark as Complete</a>                           
+                    {% endif %}                                                                                    
+                    - <a href="{% url 'delete_todo' todo.id %}">Delete</a>                                         
+                </li>                                                                                              
+            {% empty %}                                                                                            
+                <li>No TODOs yet!</li>                                                                             
+            {% endfor %}                                                                                           
+        </ul>                              
+    <p><a href="add/">Add a new task</a>.</p>                                                       
+    <!-- Task list will go here later -->                                                                      
+{% endblock %}
